@@ -1,14 +1,17 @@
-class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        if len(strs) == 0:
-            return [strs]
-        elif len(strs) == 1:
-            return [strs]
-        dct = {}
-        for i in range(len(strs)):
-            sorted_ = "".join(sorted(strs[i]))
-            if sorted_ not in dct.keys():
-                dct[sorted_] = [strs[i]]
-            else:
-                dct[sorted_].append(strs[i])
-        return dct.values()
+from collections import defaultdict
+ 
+# initializing list
+test_list = ["eat","tea","tan","ate","nat","bat"]
+ 
+# printing original list
+print("The original list : " + str(test_list))
+ 
+# using defaultdict() + sorted() + values()
+# Grouping Anagrams
+temp = defaultdict(list)
+for ele in test_list:
+    temp[str(sorted(ele))].append(ele)
+res = list(temp.values())
+ 
+# print result
+print("The grouped Anagrams : " + str(res))
