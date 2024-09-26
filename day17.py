@@ -13,7 +13,7 @@ def primeFactors(n):
             print (i,end=' ')
             n = n / i
             
-   #for number greater than 2
+   #for number greater than 21
     if n > 2:
         print (n,end=' ')
         
